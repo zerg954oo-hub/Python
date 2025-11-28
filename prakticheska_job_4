@@ -1,0 +1,33 @@
+#Вариант 5
+#Задание 1
+a = int(input("Введите число"))
+b = int(input("Введите число"))
+if a < b:
+    print(a**b)
+elif a > b:
+    print(b**a)
+else:
+    print(a + b)
+#Задание 2
+new_message = "Hello! How are you?"
+response = input("Введите ваш ответ на сообщение 'Hello! How are you?': ")
+if new_message and response:
+    if new_message[0] == response[0]:
+        print(True)
+    else:
+        print(False)
+else:
+    print("Одна из строк пуста, сравнение невозможно.")
+#Задание 3
+a = int(input("Введите число"))
+b = int(input("Введите число"))
+if a < b:
+    r = b - a
+    print(b, "Разница", r)
+elif a > b:
+    r = a - b
+    print(a, "разница", r)
+else:
+    print(a, "=", b )
+#Вариант 6
+#Задание 1
