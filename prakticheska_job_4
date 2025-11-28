@@ -1,3 +1,308 @@
+Вариантт 1
+#1
+number = int(input("Введите целое число: "))  
+if number < 0:  
+    number = abs(number)
+elif number == 0:  
+    number = 1 
+#2
+text = input("Введите строку: ")   
+if '.' in text or ',' in text:  
+    print(True)  
+else:  
+    print(False)
+#3
+num1 = int(input("Введите первое число: "))  
+num2 = int(input("Введите второе число: "))   
+if num1 % 3 == 0 and num2 % 3 == 0:  
+    print(True)  
+elif num1 % 3 == 0 or num2 % 3 == 0:  
+    print("Одно число делится на 3")  
+else:  
+    print(False)
+Вариант 2
+#1
+number = int(input("Введите число: "))  
+if number > 100:  
+    print("*")  
+elif number > 0:  
+    print("*" * number)  
+#2
+string1 = input("Введите первую строку: ")  
+string2 = input("Введите вторую строку: ")  
+print(string1 == string2)
+#3
+r = int(input("Введите значение r (0-255): "))  
+g = int(input("Введите значение g (0-255): "))  
+b = int(input("Введите значение b (0-255): "))
+Вариант 3
+#1
+def simple_file_check():
+    filename = input("Введите имя файла с расширением: ")
+    if filename.endswith('.doc') or filename.endswith('.docx'):
+        print("Word file")
+    elif filename.endswith('.py'):
+        print("Python file")
+    elif filename.endswith('.txt'):
+        print("Text file")
+    else:
+        if '.' in filename:
+            extension = filename.split('.')[-1]
+            print(f"Неизвестный формат файла (.{extension})")
+        else:
+            print("Файл не имеет расширения")number = float(input("Введите число: "))   
+if number <= 0:  
+    number = 1  
+print(f"{number - 1}, {number}, {number + 1}")
+#2
+def simple_file_check():
+    filename = input("Введите имя файла с расширением: "
+    if filename.endswith('.doc') or filename.endswith('.docx'):
+        print("Word file")
+    elif filename.endswith('.py'):
+        print("Python file")
+    elif filename.endswith('.txt'):
+        print("Text file")
+    else:
+        if '.' in filename:
+            extension = filename.split('.')[-1]
+            print(f"Неизвестный формат файла (.{extension})")
+        else:
+            print("Файл не имеет расширения")
+#3
+def check_triangle_type():
+    print("=== Определитель типа треугольника ===")
+    try:
+        a = float(input("Введите длину первой стороны: "))
+        b = float(input("Введите длину второй стороны: "))
+        c = float(input("Введите длину третьей стороны: "))
+        if a <= 0 or b <= 0 or c <= 0:
+            print("Ошибка: все стороны должны быть положительными числами!")
+            return
+        if (a + b <= c) or (a + c <= b) or (b + c <= a):
+            print("Ошибка: такие стороны не могут образовать треугольник!")
+            print("(Сумма любых двух сторон должна быть больше третьей)")
+            return
+        if a == b == c:
+            print("Треугольник: РАВНОСТОРОННИЙ")
+        elif a == b or a == c or b == c:
+            print("Треугольник: РАВНОБЕДРЕННЫЙ")
+        else:
+            print("Треугольник: РАЗНОСТОРОННИЙ")
+            
+    except ValueError:
+        print("Ошибка: пожалуйста, введите числовые значения!")
+
+def detailed_triangle_check():
+    print("=== Определитель типа треугольника ===")
+    
+    try:
+        a = float(input("Введите длину первой стороны: "))
+        b = float(input("Введите длину второй стороны: "))
+        c = float(input("Введите длину третьей стороны: "))
+        if a <= 0 or b <= 0 or c <= 0:
+            print("❌ Ошибка: все стороны должны быть положительными числами!")
+            return
+        sides_valid = True
+        if a + b <= c:
+            print(f"❌ Стороны {a} + {b} = {a+b} ≤ {c} - нарушение неравенства треугольника")
+            sides_valid = False
+        if a + c <= b:
+            print(f"❌ Стороны {a} + {c} = {a+c} ≤ {b} - нарушение неравенства треугольника")
+            sides_valid = False
+        if b + c <= a:
+            print(f"❌ Стороны {b} + {c} = {b+c} ≤ {a} - нарушение неравенства треугольника")
+            sides_valid = False
+        if not sides_valid:
+            print("Такие стороны не могут образовать треугольник!")
+            return
+        print(f"\nСтороны треугольника: {a}, {b}, {c}")
+        if a == b == c:
+            print("✅ Треугольник: РАВНОСТОРОННИЙ")
+            print("   (Все три стороны равны)")
+        elif a == b:
+            print("✅ Треугольник: РАВНОБЕДРЕННЫЙ")
+            print(f"   (Стороны a={a} и b={b} равны, основание c={c})")
+        elif a == c:
+            print("✅ Треугольник: РАВНОБЕДРЕННЫЙ")
+            print(f"   (Стороны a={a} и c={c} равны, основание b={b})")
+        elif b == c:
+            print("✅ Треугольник: РАВНОБЕДРЕННЫЙ")
+            print(f"   (Стороны b={b} и c={c} равны, основание a={a})")
+        else:
+            print("✅ Треугольник: РАЗНОСТОРОННИЙ")
+            print("   (Все стороны имеют разную длину)")
+    except ValueError:
+        print("❌ Ошибка: пожалуйста, введите числовые значения!")
+def triangle_type_detector():
+    print("=== Определитель типа треугольника ===")
+    print("Для выхода введите 'exit'\n")
+    while True:
+        try:
+            user_input = input("Введите три стороны через пробел: ").strip()
+            if user_input.lower() == 'exit':
+                print("До свидания!")
+                break
+            if not user_input:
+                continue
+            sides = user_input.split()
+            if len(sides) != 3:
+                print("❌ Ошибка: нужно ввести ровно три числа!")
+                continue
+            a = float(sides[0])
+            b = float(sides[1])
+            c = float(sides[2])
+            if a <= 0 or b <= 0 or c <= 0:
+                print("❌ Ошибка: все стороны должны быть положительными!")
+                continue
+            if (a + b <= c) or (a + c <= b) or (b + c <= a):
+                print("❌ Ошибка: такие стороны не могут образовать треугольник!")
+                continue
+            if a == b == c:
+                print("📐 Треугольник: РАВНОСТОРОННИЙ")
+            elif a == b or a == c or b == c:
+                print("📐 Треугольник: РАВНОБЕДРЕННЫЙ")
+            else:
+                print("📐 Треугольник: РАЗНОСТОРОННИЙ")
+            print() 
+        except ValueError:
+            print("❌ Ошибка: пожалуйста, введите числовые значения!")
+        except KeyboardInterrupt:
+            print("\n\nПрограмма завершена.")
+            break
+if __name__ == "__main__":
+    check_triangle_type()
+    detailed_triangle_check()
+    triangle_type_detector()
+Вариант 4
+#1
+text = 'important information in one line'
+letter = input("Введите букву: ").strip().lower()  
+if len(letter) == 1:  # проверяем, что введено именно одна буква  
+    result = letter in text  
+    print(result)  
+else:  
+    print("Пожалуйста, введите ровно одну букву") 
+#2
+def calculate_figure():
+    print("=== Определитель фигуры и площади ===")
+    
+    try:
+        side1 = float(input("Введите длину первой стороны: "))
+        side2 = float(input("Введите длину второй стороны: "))
+        if side1 <= 0 or side2 <= 0:
+            print("❌ Ошибка: стороны должны быть положительными числами!")
+            return
+        if side1 == side2:
+            figure_type = "КВАДРАТ"
+        else:
+            figure_type = "ПРЯМОУГОЛЬНИК"
+        area = side1 * side2
+        print(f"\n📐 Фигура: {figure_type}")
+        print(f"📏 Сторона A: {side1}")
+        print(f"📏 Сторона B: {side2}")
+        print(f"📊 Площадь: {area}")
+        
+    except ValueError:
+        print("❌ Ошибка: пожалуйста, введите числовые значения!")
+def detailed_figure_calculation():
+    print("=== Определитель фигуры и площади ===")
+    
+    try:
+        a = float(input("Введите длину первой стороны: "))
+        b = float(input("Введите длину второй стороны: "))
+        
+        if a <= 0 or b <= 0:
+            print("❌ Ошибка: стороны должны быть положительными числами!")
+            return
+        if a == b:
+            figure_type = "КВАДРАТ"
+            description = f"Все стороны равны ({a})"
+        else:
+            figure_type = "ПРЯМОУГОЛЬНИК"
+            description = f"Смежные стороны: {a} и {b}"
+        area = a * b
+        perimeter = 2 * (a + b)
+        print(f"\n{'='*40}")
+        print(f"📐 ФИГУРА: {figure_type}")
+        print(f"{'='*40}")
+        print(f"📏 Сторона A: {a}")
+        print(f"📏 Сторона B: {b}")
+        print(f"📐 Характеристика: {description}")
+        print(f"📊 Площадь: {area}")
+        print(f"📏 Периметр: {perimeter}")
+        if figure_type == "КВАДРАТ":
+            print(f"💡 Диагональ: {a * (2**0.5):.2f}")
+    except ValueError:
+        print("❌ Ошибка: пожалуйста, введите числовые значения!")
+def interactive_figure_detector():
+    print("=== Определитель фигур и площадей ===")
+    print("Для выхода введите 'exit'\n")
+    while True:
+        try:
+            user_input = input("Введите две стороны через пробел: ").strip()
+            if user_input.lower() == 'exit':
+                print("До свидания!")
+                break
+            if not user_input:
+                continue
+            sides = user_input.split()
+            if len(sides) != 2:
+                print("❌ Ошибка: нужно ввести ровно два числа!")
+                continue
+            a = float(sides[0])
+            b = float(sides[1])
+            if a <= 0 or b <= 0:
+                print("❌ Ошибка: стороны должны быть положительными!")
+                continue
+            if a == b:
+                figure = "КВАДРАТ"
+                emoji = "⬜"
+            else:
+                figure = "ПРЯМОУГОЛЬНИК"
+                emoji = "🟦"
+            area = a * b
+            perimeter = 2 * (a + b)
+            print(f"{emoji} Фигура: {figure}")
+            print(f"   Стороны: {a} × {b}")
+            print(f"   Площадь: {area}")
+            print(f"   Периметр: {perimeter}")
+            print()
+        except ValueError:
+            print("❌ Ошибка: пожалуйста, введите числовые значения!")
+        except KeyboardInterrupt:
+            print("\n\nПрограмма завершена.")
+            break
+def simple_figure_check():
+    try:
+        a = float(input("Введите первую сторону: "))
+        b = float(input("Введите вторую сторону: "))        
+        if a <= 0 or b <= 0:
+            print("Стороны должны быть положительными!")
+            return
+        if a == b:
+            print(f"Квадрат со стороной {a}, площадь = {a*b}")
+        else:
+            print(f"Прямоугольник {a}×{b}, площадь = {a*b}")
+    except ValueError:
+        print("Ошибка ввода!")
+if __name__ == "__main__":
+    calculate_figure()
+    detailed_figure_calculation()
+    interactive_figure_detector()
+    simple_figure_check()
+#3
+def check_mood(response):   
+    positive = ['хорошо', 'нормально', 'отлично']   
+    negative = ['плохо', 'не хорошо']   
+    response = response.lower()  
+    if response in positive:  
+        return '😊'  
+    elif response in negative:  
+        return '🙁'  
+    else:  
+        return '😐' 
+
 #Вариант 5
 #Задание 1
 a = int(input("Введите число"))
@@ -29,5 +334,42 @@ elif a > b:
     print(a, "разница", r)
 else:
     print(a, "=", b )
-#Вариант 6
-#Задание 1
+Вариан 6
+#1
+str = input("Введите произвольную строку: ")
+if len(str) > 0:
+    first_char = str[0]
+    last_char = str[-1]
+    if first_char == last_char:
+        print(True)
+    else:
+        print(False)
+else:
+    print(False)
+#2
+number = int(input("Введите целое число: "))
+if number % 2 == 0:
+    result = number ** 2
+    print(f"Число кратно 2. Результат (число в степени 2): {result}")
+elif number % 3 == 0:
+    result = number ** 3
+    print(f"Число кратно 3. Результат (число в степени 3): {result}")
+else:
+    result = number * 100
+    print(f"Число не кратно ни 2, ни 3. Результат (число * 100): {result}")
+#3
+num1 = float(input("Введите первое число: "))
+num2 = float(input("Введите второе число: "))
+if num1 < 0 and num2 < 0:
+    print(False)
+elif num1 >= 0 and num2 >= 0:
+    print(True)
+elif num1 < 0:
+    num1 += 1000  
+    print(f"Первое число (отрицательное) скорректировано: {num1}")
+    print(f"Второе число (положительное): {num2}")
+elif num2 < 0:
+        num2 += 1000  
+        print(f"Первое число (положительное): {num1}")
+        print(f"Второе число (отрицательное) скорректировано: {num2}")
+
