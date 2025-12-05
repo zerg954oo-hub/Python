@@ -1,0 +1,21 @@
+#Задание_1
+my_list = ["круг", 0.25, "квадрат", "треугольник", 15, "круг", "овал", "10"]
+my_list.remove(0.25)
+my_list.remove(15)
+my_list.remove("10")
+print(my_list)
+#Задание_2
+abc = ["A", "B", "C", "D", "E" ,"F" ,"G"]
+del abc[1:5]
+print(abc)
+#Задание_3
+number = [1, 4]
+number.insert(1,2)
+number.insert(2,3)
+print(number)
+#Задание_4
+mass = [14, -6.3, 3, 11, 6, 8.5, 99, -20, -6, 10, 40, 0.25, -4, 5]
+mass.pop(1),mass.pop(-2),mass.pop(-6),mass.pop(-5)
+print(mass)
+print(sorted(mass, reverse=True))
+#Задание_5
