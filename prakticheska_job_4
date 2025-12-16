@@ -6,19 +6,29 @@ if number < 0:
 elif number == 0:  
     number = 1 
 #2
-text = input("Введите строку: ")   
-if '.' in text or ',' in text:  
-    print(True)  
-else:  
+text = input("Введите строку: ")
+dot = False
+comma = False
+
+for i in text:
+    if i == '.':
+        dot = True
+    if i == ',':
+        comma = True
+if dot or comma == True:
+    print(True)
+else:
     print(False)
 #3
-num1 = int(input("Введите первое число: "))  
-num2 = int(input("Введите второе число: "))   
-if num1 % 3 == 0 and num2 % 3 == 0:  
-    print(True)  
-elif num1 % 3 == 0 or num2 % 3 == 0:  
-    print("Одно число делится на 3")  
-else:  
+num1 = int(input("Введите первое целое число: "))
+num2 = int(input("Введите второе целое число: "))
+div1 = num1 % 3 == 0
+div2 = num2 % 3 == 0
+if div1 and div2:
+    print(True)
+elif div1 or div2:
+    print("Одно число делится на 3")
+else:
     print(False)
 Вариант 2
 #1
