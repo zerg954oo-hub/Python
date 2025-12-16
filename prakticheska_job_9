@@ -1,0 +1,7 @@
+notebook = {}
+
+def num_1():
+    global notebook
+    key = input("Введите заголовок:")
+    value = input("Введите текст:")
+    notebook[key] = value
