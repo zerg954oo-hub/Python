@@ -54,10 +54,10 @@ def menu():
         elif a == 3:
             num_3()
         elif a == 4:
-            print("Удачи тебе!!!")
+            print("Удачи")
             break
         else:
-            print("Нет такой команды!!!")
-            menu()
+            print("Такого нету")
+            menu
 
 menu()
