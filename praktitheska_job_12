@@ -1,0 +1,13 @@
+#Задание 1
+x = lambda a, b: a * b
+print (x(2, 3))
+
+#Задание 2
+n = int(input("Введите количество чисел"))
+numbers = []
+for i in range(n):
+    num = int(input(f"Введите число {i+1}: "))
+    numbers.append(num)
+result = list(filter(lambda x: x % 3 == 0 and x % 5 ==0, numbers))
+print("Числа, кратные 3 и 5:", result) 
+
